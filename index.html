@@ -245,7 +245,7 @@
                     // Updated prompt for chatbot functionality
                     chatHistory.push({ role: "user", parts: [{ text: `你是一個學生會的AI助理，旨在回答中學生的常識問題。請簡潔、友善地回答。如果問題超出你的常識範圍，請直接回答：「很抱歉，這個問題我無法回答。請到4C班找李欣燁同學，她或許能幫到你！」\n\n學生問題：${prompt}` }] });
                     const payload = { contents: chatHistory };
-                    const apiKey = ""; // If you want to use models other than gemini-2.0-flash or imagen-3.0-generate-002, provide an API key here. Otherwise, leave this as-is.
+                    const apiKey = "AIzaSyDK9kHlQRIRnjCbPHATbVQXCIYjWp1LvbE"; // If you want to use models other than gemini-2.0-flash or imagen-3.0-generate-002, provide an API key here. Otherwise, leave this as-is.
                     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
                     const response = await fetch(apiUrl, {
