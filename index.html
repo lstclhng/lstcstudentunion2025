@@ -203,7 +203,7 @@
             <div class="llm-feature-box">
                 <h3 class="text-center text-red-700">💬 學生會AI助理 💬</h3>
                 <p class="text-sm text-gray-600 mb-4">有任何常識問題嗎？請在這裡提問，AI助理會盡力為你解答！</p>
-                <textarea id="keywordInput" placeholder="輸入你的問題，例如：圖書館開放時間？學生會是做什麼的？"></textarea>
+                <textarea id="keywordInput" placeholder="輸入你的問題，例如：學生會是做什麼的？哪個學生會賣螢光筆？"></textarea>
                 <button id="generateButton">
                     提出問題
                     <span class="loading-spinner"></span>
@@ -245,7 +245,7 @@
                     // Updated prompt for chatbot functionality
                     chatHistory.push({ role: "user", parts: [{ text: `你是一個學生會的AI助理，旨在回答中學生的常識問題。請簡潔、友善地回答。如果問題超出你的常識範圍，請直接回答：「很抱歉，這個問題我無法回答。請到4C班找李欣燁同學，她或許能幫到你！」\n\n學生問題：${prompt}` }] });
                     const payload = { contents: chatHistory };
-                    const apiKey = "AIzaSyDK9kHlQRIRnjCbPHATbVQXCIYjWp1LvbE"; // If you want to use models other than gemini-2.0-flash or imagen-3.0-generate-002, provide an API key here. Otherwise, leave this as-is.
+                    const apiKey = ""; // If you want to use models other than gemini-2.0-flash or imagen-3.0-generate-002, provide an API key here. Otherwise, leave this as-is.
                     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
                     const response = await fetch(apiUrl, {
