@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>學生會競選特稿</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Serif+SC:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light gray background */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .newspaper-container {
+            background-color: #ffffff; /* White paper background */
+            border: 2px solid #333;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            max-width: 900px;
+            width: 100%;
+            padding: 25px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            overflow: hidden; /* Ensure columns behave correctly */
+        }
+        .newspaper-header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 3px double #333;
+            padding-bottom: 15px;
+        }
+        .newspaper-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 3.5rem; /* Larger for impact */
+            font-weight: 700;
+            color: #b91c1c; /* Red for "號外" */
+            line-height: 1;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .newspaper-subtitle {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #333;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+        .issue-info {
+            font-size: 0.9rem;
+            color: #555;
+            text-align: right;
+            margin-top: -10px;
+            margin-bottom: 15px;
+            padding-right: 5px;
+        }
+        .article-body {
+            column-count: 1; /* Default to 1 column on small screens */
+            column-gap: 30px;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            color: #333;
+            text-align: justify;
+        }
+        .article-body h3 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            line-height: 1.3;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        .article-body p {
+            margin-bottom: 15px;
+        }
+        .article-body strong {
+            color: #1a202c;
+        }
+
+        /* Responsive columns for larger screens */
+        @media (min-width: 768px) {
+            .article-body {
+                column-count: 2; /* 2 columns on medium screens */
+            }
+        }
+        @media (min-width: 1024px) {
+            .article-body {
+                column-count: 2; /* Still 2 columns on large screens */
+            }
+        }
+
+        /* LLM Feature specific styles */
+        .llm-feature-box {
+            background-color: #f9f9f9;
+            border: 1px dashed #ccc;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 8px;
+            text-align: center;
+            break-inside: avoid-column; /* Prevent breaking across columns */
+        }
+        .llm-feature-box textarea {
+            width: 100%;
+            min-height: 80px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            resize: vertical;
+        }
+        .llm-feature-box button {
+            background-color: #b91c1c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .llm-feature-box button:hover {
+            background-color: #991b1b;
+        }
+        .llm-feature-box .loading-spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #fff;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            margin-left: 10px;
+            display: none; /* Hidden by default */
+        }
+        .llm-feature-box button.loading .loading-spinner {
+            display: inline-block;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .llm-result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e0f2f7;
+            border: 1px solid #b3e5fc;
+            border-radius: 5px;
+            text-align: left;
+            font-size: 1.1rem;
+            color: #01579b;
+            font-weight: 500;
+            white-space: pre-wrap; /* Preserve whitespace and line breaks */
+            word-wrap: break-word; /* Break long words */
+        }
+    </style>
+</head>
+<body>
+    <div class="newspaper-container rounded-lg shadow-lg">
+        <div class="newspaper-header">
+            <div class="newspaper-title">特稿！學生會競選</div>
+            <div class="newspaper-subtitle">
+                【獨家專訪】學生會新內閣誓要「玩轉校園」！福利超廣、活動超爆、仲話要同你齊齊做決策？
+            </div>
+        </div>
+        <div class="issue-info">
+            發行日期：2025年5月27日 &nbsp;&nbsp; 第001期
+        </div>
+
+        <div class="article-body">
+            <h3>李欣燁：「返學，點解可以唔開心？」</h3>
+            <p>這句來自學生會競選內閣「<span class="font-bold text-red-600">[請在此補充內閣名稱]</span>」候選內閣副會長李欣燁的真誠提問，相信已戳中了無數同學的心聲。</p>
+            <p>在激烈的學生會選舉戰中，這個由經驗豐富的「老將」與充滿熱情的新血組成的團隊，正以其超乎想像的福利承諾、腦洞大開的創意活動，以及前所未有的「透明度」宣言，誓要徹底「玩轉」我們的校園生活！</p>
+
+            <h3>福利勁到你唔信！從衣食住行到學習，全部包辦？</h3>
+            <p>「我哋嘅福利，係相比起對方內閣嘅涉及嘅層面上係更多更廣嘅！」候選內閣會長黃明聰自信地說。他透露，這屆內閣的福利計劃，簡直是把學生們的日常需求「一網打盡」—— 從衣著、飲食、娛樂，到學習，甚至連住的方面都會涵蓋！</p>
+            <p>想像一下，未來校園生活會是怎樣的？或許是午飯時間能享受到更多校外餐廳的獨家學生優惠，或許是學習資源不再愁，或許是活動豐富到令你「唔捨得返屋企」！雖然具體福利細節仍有待公布，但這種「全方位」的承諾，必定讓不少同學充滿期待。</p>
+
+            <h3>創意活動超吸睛！「拔河」同「尋蛋」？——「邊個諗㗎？！」</h3>
+            <p>光有福利不夠看，玩得開心才是王道！這個內閣在活動策劃上，更是展現了滿滿的創意。黃明聰興奮地透露，他們將會舉辦一些前所未有的新奇活動，例如「拔河比賽」和「復活節尋蛋」！</p>
+            <p>「依啲相對新鮮，會俾人覺得有新鮮感嘅活動！」黃明聰表示。試想想，當整個校園都變成尋寶遊戲的現場，或者師生們齊心協力在「拔河」中一較高下，這些畫面光是想想就讓人腎上腺素飆升！內閣希望透過這些獨特的活動，為同學帶來不一樣的校園體驗，讓大家真正「鍾意番返學」。</p>
+
+            <h3>決策過程全公開！「你投我一票，我聽你意見」不再是空話！</h3>
+            <p>「我哋會運用社交平臺去盡量擴幫我哋嘅透明度啦！」這是黃明聰多次強調的核心理念。這個內閣承諾，將會把學生會的重要決策過程，放到IG等社交平台，讓同學「自己做出決定」！</p>
+            <p>想選什麼運動比賽？球類比賽規則怎麼定？這些都可能不再是學生會內部說了算，而是由你們——全體學生，來投票決定！而且，他們更承諾在學期結束時，會由財務組公佈全年的開支，讓每一筆錢都花得清清楚楚，讓同學對學生會的運作「信心十足」。</p>
+
+            <h3>「想大家開心返學」！這就是學生會的「存在意義」！</h3>
+            <p>當被問及學生會存在的意義時，李欣燁的話語更顯真摯。「大家一直都會話學生會係作為學校同同學之間溝通嘅橋樑啦，但我成為學生會一份子嘅原因，係想大家覺得，喺學校來可以玩到咁多活動，同埋作為學校一份子係可以享有到咁多福利，咁我會想大家最基本返學係應該開心啦，想大家真正嘅會鍾意返學囉。」</p>
+            <p>這份簡單而直接的願望，相信觸動了不少學生的心。一個讓學生感到快樂、福利滿滿的校園，正是這個內閣努力的方向。他們深信，一個透明、負責，且能滿足學生需求的學生會，才能真正贏得公信力，並在校園文化中扮演舉足輕重的角色。</p>
+
+            <h3>挑戰與展望：經驗豐富、承諾滿滿，你準備好投他們一票了嗎？</h3>
+            <p>面對未來可能遇到的挑戰，內閣表示他們會通過多次會議商討來解決問題，並在問題解決後舉辦聚餐來提升團隊士氣。他們強調，將會竭盡所能，確保每一個學生都能享受到他們提供的福利和活動。</p>
+            <p>這個學生會競選內閣憑藉其豐富的經驗、廣泛的福利承諾、新穎的活動創意，以及對透明度的堅持，無疑為今年的學生會選舉增添了不少看點。同學們，你準備好迎接一個更「爆」、更「貼地」、更「你話事」的學生會了嗎？你的手上這一票，將決定校園未來一年的精彩程度！</p>
+
+            <div class="llm-feature-box">
+                <h3 class="text-center text-red-700">💬 學生會AI助理 💬</h3>
+                <p class="text-sm text-gray-600 mb-4">有任何常識問題嗎？請在這裡提問，AI助理會盡力為你解答！</p>
+                <textarea id="keywordInput" placeholder="輸入你的問題，例如：圖書館開放時間？學生會是做什麼的？"></textarea>
+                <button id="generateButton">
+                    提出問題
+                    <span class="loading-spinner"></span>
+                </button>
+                <div id="llmResult" class="llm-result hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const keywordInput = document.getElementById('keywordInput');
+            const generateButton = document.getElementById('generateButton');
+            const llmResultDiv = document.getElementById('llmResult');
+
+            generateButton.addEventListener('click', async () => {
+                const prompt = keywordInput.value.trim();
+                if (!prompt) {
+                    llmResultDiv.classList.remove('hidden');
+                    llmResultDiv.textContent = '請輸入你的問題！';
+                    llmResultDiv.style.backgroundColor = '#ffebee'; /* Light red for error */
+                    llmResultDiv.style.borderColor = '#ef9a9a';
+                    llmResultDiv.style.color = '#c62828';
+                    return;
+                }
+
+                // Show loading state
+                generateButton.classList.add('loading');
+                generateButton.disabled = true;
+                llmResultDiv.classList.add('hidden');
+                llmResultDiv.textContent = '';
+                llmResultDiv.style.backgroundColor = '#e0f2f7'; /* Reset to default */
+                llmResultDiv.style.borderColor = '#b3e5fc';
+                llmResultDiv.style.color = '#01579b';
+
+
+                try {
+                    let chatHistory = [];
+                    // Updated prompt for chatbot functionality
+                    chatHistory.push({ role: "user", parts: [{ text: `你是一個學生會的AI助理，旨在回答中學生的常識問題。請簡潔、友善地回答。如果問題超出你的常識範圍，請直接回答：「很抱歉，這個問題我無法回答。請到4C班找李欣燁同學，她或許能幫到你！」\n\n學生問題：${prompt}` }] });
+                    const payload = { contents: chatHistory };
+                    const apiKey = ""; // If you want to use models other than gemini-2.0-flash or imagen-3.0-generate-002, provide an API key here. Otherwise, leave this as-is.
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        llmResultDiv.textContent = text;
+                        llmResultDiv.classList.remove('hidden');
+                    } else {
+                        llmResultDiv.textContent = '未能獲得回應，請再試一次。';
+                        llmResultDiv.classList.remove('hidden');
+                        llmResultDiv.style.backgroundColor = '#ffebee';
+                        llmResultDiv.style.borderColor = '#ef9a9a';
+                        llmResultDiv.style.color = '#c62828';
+                    }
+                } catch (error) {
+                    console.error('Error calling Gemini API:', error);
+                    llmResultDiv.textContent = '生成失敗，請檢查網絡連接或稍後再試。';
+                    llmResultDiv.classList.remove('hidden');
+                    llmResultDiv.style.backgroundColor = '#ffebee';
+                    llmResultDiv.style.borderColor = '#ef9a9a';
+                    llmResultDiv.style.color = '#c62828';
+                } finally {
+                    // Hide loading state
+                    generateButton.classList.remove('loading');
+                    generateButton.disabled = false;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
