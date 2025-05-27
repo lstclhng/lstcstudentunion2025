@@ -84,6 +84,32 @@
             color: #1a202c;
         }
 
+        /* ----- Start: NEW CSS for Images ----- */
+        .article-body img.article-image {
+            max-width: 100%; /* Ensure image fits column */
+            height: auto;
+            border: 1px solid #ddd;
+            padding: 3px;
+            background-color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .article-body img.image-right {
+            float: right;
+            margin-left: 20px;
+            width: 250px; /* Specific width for floating image */
+            max-width: 45%; /* Max width relative to column */
+        }
+
+        .article-body img.image-left {
+            float: left;
+            margin-right: 20px;
+            width: 250px; /* Specific width for floating image */
+            max-width: 45%; /* Max width relative to column */
+        }
+        /* ----- End: NEW CSS for Images ----- */
+
+
         /* Responsive columns for larger screens */
         @media (min-width: 768px) {
             .article-body {
@@ -177,20 +203,25 @@
 
         <div class="article-body">
             <h3>李欣燁：「返學，點解可以唔開心？」</h3>
-            <p>這句來自學生會競選內閣「<span class="font-bold text-red-600">Ratljóst</span>」副會長李欣燁的真誠提問，相信已戳中了無數同學的心聲。</p>
-            <p>在激烈的學生會選舉戰中，這個由經驗豐富的「老將」與充滿熱情的新血組成的團隊，正以其超乎想像的福利承諾、腦洞大開的創意活動，以及前所未有的「透明度」宣言，誓要徹底「玩轉」我們的校園生活！</p>
-            <p>   <img src="https://raw.githubusercontent.com/lstclhng/lstcstudentunion2025/76ffe820238dc0b9d21290d86a28dc0585221a66/IMG-20250522-WA0219.jpg" alt="學生會候選內閣正副會員黃明聰和李欣燁，甚有親和力。" class="article-image image-right">   </p>
+            <p>這句來自學生會競選內閣「<span class="font-bold text-red-600">[請在此補充內閣名稱]</span>」候選內閣副會長李欣燁的真誠提問，相信已戳中了無數同學的心聲。</p>
+            <p>
+                <img src="" alt="學生會候選人李欣燁的肖像，展現親和力。" class="article-image image-right">
+                在激烈的學生會選舉戰中，這個由經驗豐富的「老將」與充滿熱情的新血組成的團隊，正以其超乎想像的福利承諾、腦洞大開的創意活動，以及前所未有的「透明度」宣言，誓要徹底「玩轉」我們的校園生活！
+            </p>
+
             <h3>福利勁到你唔信！從衣食住行到學習，全部包辦？</h3>
             <p>「我哋嘅福利，係相比起對方內閣嘅涉及嘅層面上係更多更廣嘅！」候選內閣會長黃明聰自信地說。他透露，這屆內閣的福利計劃，簡直是把學生們的日常需求「一網打盡」—— 從衣著、飲食、娛樂，到學習，甚至連住的方面都會涵蓋！</p>
             <p>想像一下，未來校園生活會是怎樣的？或許是午飯時間能享受到更多校外餐廳的獨家學生優惠，或許是學習資源不再愁，或許是活動豐富到令你「唔捨得返屋企」！雖然具體福利細節仍有待公布，但這種「全方位」的承諾，必定讓不少同學充滿期待。</p>
 
             <h3>創意活動超吸睛！「拔河」同「尋蛋」？——「邊個諗㗎？！」</h3>
             <p>光有福利不夠看，玩得開心才是王道！這個內閣在活動策劃上，更是展現了滿滿的創意。黃明聰興奮地透露，他們將會舉辦一些前所未有的新奇活動，例如「拔河比賽」和「復活節尋蛋」！</p>
-            <p>「依啲相對新鮮，會俾人覺得有新鮮感嘅活動！」黃明聰表示。試想想，當整個校園都變成尋寶遊戲的現場，或者師生們齊心協力在「拔河」中一較高下，這些畫面光是想想就讓人腎上腺素飆升！黃明聰希望透過這些獨特的活動，為同學帶來不一樣的校園體驗，讓大家真正「鍾意番返學」。</p>
-            <p>   <img src="https://raw.githubusercontent.com/lstclhng/lstcstudentunion2025/76ffe820238dc0b9d21290d86a28dc0585221a66/unnamed.jpg" alt="師生拔河示意圖。" class="article-image image-right">   </p>
-          
+            <p>
+                <img src="" alt="學生們在校園內參與拔河或尋蛋活動的場景。" class="article-image image-left">
+                「依啲相對新鮮，會俾人覺得有新鮮感嘅活動！」黃明聰表示。試想想，當整個校園都變成尋寶遊戲的現場，或者師生們齊心協力在「拔河」中一較高下，這些畫面光是想想就讓人腎上腺素飆升！內閣希望透過這些獨特的活動，為同學帶來不一樣的校園體驗，讓大家真正「鍾意番返學」。
+            </p>
+
             <h3>決策過程全公開！「你投我一票，我聽你意見」不再是空話！</h3>
-            <p>「我哋會運用社交平臺去盡量擴幫我哋嘅透明度啦！」這是黃明聰多次強調的核心理念。他代表內閣承諾，將會把學生會的重要決策過程，放到IG等社交平台，讓同學「自己做出決定」！</p>
+            <p>「我哋會運用社交平臺去盡量擴幫我哋嘅透明度啦！」這是黃明聰多次強調的核心理念。這個內閣承諾，將會把學生會的重要決策過程，放到IG等社交平台，讓同學「自己做出決定」！</p>
             <p>想選什麼運動比賽？球類比賽規則怎麼定？這些都可能不再是學生會內部說了算，而是由你們——全體學生，來投票決定！而且，他們更承諾在學期結束時，會由財務組公佈全年的開支，讓每一筆錢都花得清清楚楚，讓同學對學生會的運作「信心十足」。</p>
 
             <h3>「想大家開心返學」！這就是學生會的「存在意義」！</h3>
@@ -204,7 +235,7 @@
             <div class="llm-feature-box">
                 <h3 class="text-center text-red-700">💬 學生會AI助理 💬</h3>
                 <p class="text-sm text-gray-600 mb-4">有任何常識問題嗎？請在這裡提問，AI助理會盡力為你解答！</p>
-                <textarea id="keywordInput" placeholder="輸入你的問題，例如：學生會是做什麼的？哪個學生會賣螢光筆？"></textarea>
+                <textarea id="keywordInput" placeholder="輸入你的問題，例如：圖書館開放時間？學生會是做什麼的？"></textarea>
                 <button id="generateButton">
                     提出問題
                     <span class="loading-spinner"></span>
@@ -220,65 +251,108 @@
             const generateButton = document.getElementById('generateButton');
             const llmResultDiv = document.getElementById('llmResult');
 
+            // IMPORTANT: Replace this with your actual Google Cloud Function URL
+            // const CLOUD_FUNCTION_URL = 'YOUR_CLOUD_FUNCTION_URL_HERE'; // Uncomment and replace if using Cloud Function backend
+            // For testing purposes in Canvas, you can still use a dummy key if you don't have a backend.
+            // When deploying to GitHub Pages, if NOT using a Cloud Function, you MUST put your API key here:
+            const apiKey = ""; // If you are using a Cloud Function, this line is not needed for the frontend.
+                               // If you are NOT using a Cloud Function (and exposing key), put your AI Studio key here.
+
+
             generateButton.addEventListener('click', async () => {
-                const prompt = keywordInput.value.trim();
-                if (!prompt) {
+                const userQuestion = keywordInput.value.trim();
+                if (!userQuestion) {
                     llmResultDiv.classList.remove('hidden');
                     llmResultDiv.textContent = '請輸入你的問題！';
-                    llmResultDiv.style.backgroundColor = '#ffebee'; /* Light red for error */
+                    llmResultDiv.style.backgroundColor = '#ffebee';
                     llmResultDiv.style.borderColor = '#ef9a9a';
                     llmResultDiv.style.color = '#c62828';
                     return;
                 }
 
-                // Show loading state
                 generateButton.classList.add('loading');
                 generateButton.disabled = true;
                 llmResultDiv.classList.add('hidden');
                 llmResultDiv.textContent = '';
-                llmResultDiv.style.backgroundColor = '#e0f2f7'; /* Reset to default */
+                llmResultDiv.style.backgroundColor = '#e0f2f7';
                 llmResultDiv.style.borderColor = '#b3e5fc';
                 llmResultDiv.style.color = '#01579b';
 
-
                 try {
                     let chatHistory = [];
-                    // Updated prompt for chatbot functionality
-                    chatHistory.push({ role: "user", parts: [{ text: `你是一個學生會的AI助理，旨在回答中學生的常識問題。請簡潔、友善地回答。如果問題超出你的常識範圍，請直接回答：「很抱歉，這個問題我無法回答。請到4C班找李欣燁同學，她或許能幫到你！」\n\n學生問題：${prompt}` }] });
-                    const payload = { contents: chatHistory };
-                    const apiKey = ""; // If you want to use models other than gemini-2.0-flash or imagen-3.0-generate-002, provide an API key here. Otherwise, leave this as-is.
-                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                    // This prompt assumes the backend (Cloud Function) will handle RAG and pass context.
+                    // If directly calling Gemini from frontend (less secure), you'd need to add context here.
+                    const promptText = `你是一個學生會的AI助理，旨在回答中學生的常識問題。請簡潔、友善地回答。如果問題超出你的常識範圍，請直接回答：「很抱歉，這個問題我無法回答。請到4C班找李欣燁同學，她或許能幫到你！」\n\n學生問題：${userQuestion}`;
+                    
+                    let response;
+                    let result;
 
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
+                    // ----- Start: Modified API Call Logic -----
+                    // If you have a Cloud Function URL, use it. Otherwise, use the direct Gemini API call (less secure for public keys).
+                    if (typeof CLOUD_FUNCTION_URL !== 'undefined' && CLOUD_FUNCTION_URL) {
+                        // Calling Cloud Function (recommended for security)
+                        response = await fetch(CLOUD_FUNCTION_URL, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ question: userQuestion })
+                        });
+                        result = await response.json();
+                        if (response.ok && result.answer) {
+                            llmResultDiv.textContent = result.answer;
+                            llmResultDiv.classList.remove('hidden');
+                        } else {
+                            llmResultDiv.textContent = result.answer || '未能獲得回應，請再試一次。';
+                            llmResultDiv.classList.remove('hidden');
+                            llmResultDiv.style.backgroundColor = '#ffebee';
+                            llmResultDiv.style.borderColor = '#ef9a9a';
+                            llmResultDiv.style.color = '#c62828';
+                        }
 
-                    const result = await response.json();
-
-                    if (result.candidates && result.candidates.length > 0 &&
-                        result.candidates[0].content && result.candidates[0].content.parts &&
-                        result.candidates[0].content.parts.length > 0) {
-                        const text = result.candidates[0].content.parts[0].text;
-                        llmResultDiv.textContent = text;
-                        llmResultDiv.classList.remove('hidden');
                     } else {
-                        llmResultDiv.textContent = '未能獲得回應，請再試一次。(測試版，未課金起防火牆)';
-                        llmResultDiv.classList.remove('hidden');
-                        llmResultDiv.style.backgroundColor = '#ffebee';
-                        llmResultDiv.style.borderColor = '#ef9a9a';
-                        llmResultDiv.style.color = '#c62828';
+                        // Direct Gemini API Call (use only if you understand the security implications for API key)
+                        if (!apiKey) {
+                            llmResultDiv.textContent = '錯誤：API 金鑰未設定！請在程式碼中填入您的金鑰或設定後端代理。';
+                            llmResultDiv.classList.remove('hidden');
+                            llmResultDiv.style.backgroundColor = '#ffebee';
+                            llmResultDiv.style.borderColor = '#ef9a9a';
+                            llmResultDiv.style.color = '#c62828';
+                            return;
+                        }
+                        chatHistory.push({ role: "user", parts: [{ text: promptText }] });
+                        const payload = { contents: chatHistory };
+                        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                        response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+                        result = await response.json();
+
+                        if (result.candidates && result.candidates.length > 0 &&
+                            result.candidates[0].content && result.candidates[0].content.parts &&
+                            result.candidates[0].content.parts.length > 0) {
+                            const text = result.candidates[0].content.parts[0].text;
+                            llmResultDiv.textContent = text;
+                            llmResultDiv.classList.remove('hidden');
+                        } else {
+                            llmResultDiv.textContent = '未能獲得回應，請再試一次。';
+                            llmResultDiv.classList.remove('hidden');
+                            llmResultDiv.style.backgroundColor = '#ffebee';
+                            llmResultDiv.style.borderColor = '#ef9a9a';
+                            llmResultDiv.style.color = '#c62828';
+                        }
                     }
+                    // ----- End: Modified API Call Logic -----
+
                 } catch (error) {
-                    console.error('Error calling Gemini API:', error);
+                    console.error('Error calling API:', error);
                     llmResultDiv.textContent = '生成失敗，請檢查網絡連接或稍後再試。';
                     llmResultDiv.classList.remove('hidden');
                     llmResultDiv.style.backgroundColor = '#ffebee';
                     llmResultDiv.style.borderColor = '#ef9a9a';
                     llmResultDiv.style.color = '#c62828';
                 } finally {
-                    // Hide loading state
                     generateButton.classList.remove('loading');
                     generateButton.disabled = false;
                 }
